@@ -6,7 +6,7 @@ class ColorsPage extends StatelessWidget {
   const ColorsPage({Key? key}) : super(key: key);
   final List<Item> colorsPage = const [
     Item(
-        sound: 'white.wav' ,
+        sound: 'white.wav',
         image: 'assets/images/colors/color_white.png',
         jpName: 'Shiro',
         enName: 'White'),
@@ -49,18 +49,24 @@ class ColorsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( appBar: AppBar(
-      title: Text('Colors'),
-      backgroundColor: Color(0xFF6D4C41),
-    ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Colors'),
+        backgroundColor: const Color(0xFF6D4C41),
+      ),
       body: ListView.builder(
         itemCount: colorsPage.length,
-        itemBuilder: (context , index,){
-          return ListItem(number:colorsPage[index],
-            color: Color(0xff9575CD),
+        itemBuilder: (
+          context,
+          index,
+        ) {
+          return NumberItem(
+            number: colorsPage[index],
+            color: const Color(0xff9575CD),
             itemType: 'colors',
           );
         },
-      ),);
+      ),
+    );
   }
 }

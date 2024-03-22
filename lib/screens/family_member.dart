@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:tokuapp/components/number_item.dart';
 import 'package:tokuapp/models/number_model.dart';
+
 class FamilyMember extends StatelessWidget {
   const FamilyMember({Key? key}) : super(key: key);
   final List<Item> familyMembers = const [
     Item(
-        sound: 'father.wav' ,
+        sound: 'father.wav',
         image: 'assets/images/family_members/family_father.png',
         jpName: 'Chichioya',
         enName: 'Father'),
@@ -60,14 +61,18 @@ class FamilyMember extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-      title: Text('Family Members'),
-      backgroundColor: Color(0xFF6D4C41),
-    ),
+        title: const Text('Family Members'),
+        backgroundColor: const Color(0xFF6D4C41),
+      ),
       body: ListView.builder(
         itemCount: familyMembers.length,
-        itemBuilder: (context , index,){
-          return ListItem(number:familyMembers[index],
-            color: Color(0xff33691E),
+        itemBuilder: (
+          context,
+          index,
+        ) {
+          return NumberItem(
+            number: familyMembers[index],
+            color: const Color(0xff33691E),
             itemType: 'family_members',
           );
         },
