@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:tokuapp/components/number_item.dart';
 import 'package:tokuapp/models/phrases_model.dart';
+
+import '../components/phrases_item.dart';
 
 class PhrasesPage extends StatelessWidget {
   const PhrasesPage({Key? key}) : super(key: key);
   final List<Phrases> phases = const [
     Phrases(
-        sound: 'are_you_coming.wav' ,
+        sound: 'are_you_coming.wav',
         jpName: 'Kimasu ka',
         enName: 'Are you coming'),
     Phrases(
@@ -47,14 +48,18 @@ class PhrasesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Phrases'),
-        backgroundColor: Color(0xFF6D4C41),
+        title: const Text('Phrases'),
+        backgroundColor: const Color(0xFF6D4C41),
       ),
       body: ListView.builder(
         itemCount: phases.length,
-        itemBuilder: (context , index,){
-          return PhrasesItem(phrase:phases[index],
-            color: Color(0xff448AFF),
+        itemBuilder: (
+          context,
+          index,
+        ) {
+          return PhrasesItem(
+            phrase: phases[index],
+            color: const Color(0xff448AFF),
             itemType: 'phrases',
           );
         },

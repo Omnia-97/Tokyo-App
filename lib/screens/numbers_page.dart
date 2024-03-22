@@ -7,22 +7,22 @@ class NumberPage extends StatelessWidget {
   const NumberPage({Key? key}) : super(key: key);
   final List<Item> numbers = const [
     Item(
-        sound: 'number_one_sound.mp3' ,
+        sound: 'number_one_sound.mp3',
         image: 'assets/images/numbers/number_one.png',
         jpName: 'ichi',
         enName: 'One'),
     Item(
-       sound: 'number_two_sound.mp3',
+        sound: 'number_two_sound.mp3',
         image: 'assets/images/numbers/number_two.png',
         jpName: 'ni',
         enName: 'Two'),
     Item(
-       sound: 'number_three_sound.mp3',
+        sound: 'number_three_sound.mp3',
         image: 'assets/images/numbers/number_three.png',
         jpName: 'mittsu',
         enName: 'Three'),
     Item(
-      sound: 'number_four_sound.mp3',
+        sound: 'number_four_sound.mp3',
         image: 'assets/images/numbers/number_four.png',
         jpName: 'shi',
         enName: 'Four'),
@@ -61,14 +61,18 @@ class NumberPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Numbers'),
-        backgroundColor: Color(0xFF6D4C41),
+        title: const Text('Numbers'),
+        backgroundColor: const Color(0xFF6D4C41),
       ),
       body: ListView.builder(
         itemCount: numbers.length,
-        itemBuilder: (context , index,){
-          return ListItem(number:numbers[index],
-            color: Color(0xfffa8100),
+        itemBuilder: (
+          context,
+          index,
+        ) {
+          return NumberItem(
+            number: numbers[index],
+            color: const Color(0xfffa8100),
             itemType: 'numbers',
           );
         },
